@@ -13,7 +13,7 @@ namespace Forest
 	{
 		bool Vector4::operator==(const Vector4 & v) const
 		{
-			return (x == v.x && y == v.y && z == v.z && w == v.w);
+			return (FloatEqual(x, v.x) && FloatEqual(y, v.y) && FloatEqual(z, v.z) && FloatEqual(w, v.w));
 		}
 
 		bool Vector4::operator!=(const Vector4 & v) const
