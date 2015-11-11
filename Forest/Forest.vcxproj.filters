@@ -64,6 +64,9 @@
     <ClInclude Include="..\include\Math\Vector4.h">
       <Filter>Math\Vectors</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\Math\Matrix4.h">
+      <Filter>Math\Matrices</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Core\Input\Mouse.cpp">
@@ -81,6 +84,9 @@
     </ClCompile>
     <ClCompile Include="..\src\Math\Vector4.cpp">
       <Filter>Math\Vectors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Math\Matrix4.cpp">
+      <Filter>Math\Matrices</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
