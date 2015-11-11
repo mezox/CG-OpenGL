@@ -8,9 +8,13 @@
 #ifndef FOREST_MATH_MATRIX4_H
 #define FOREST_MATH_MATRIX4_H
 
-#include "Vector4.h"
-#include "Common.h"
-//#include "Quaternion.h"
+#ifndef FOREST_MATH_VECTOR4_H
+	#include "Vector4.h"
+#endif
+
+#ifndef FOREST_MATH_QUATERNION_H
+	#include "Quaternion.h"
+#endif
 
 namespace Forest
 {
@@ -25,7 +29,7 @@ namespace Forest
 			static Matrix4 MakeTranslation(const Vector3& pos);
 			static Matrix4 MakeRotation(float angle, const Vector3& axis);
 			static Matrix4 MakeRotation(const Vector3& rot);
-			//static Matrix4 MakeRotation(const Quaternion &q);
+			static Matrix4 MakeRotation(const Quaternion &q);
 			static Matrix4 MakeScale(const Vector3& scale);
 
 		public:
