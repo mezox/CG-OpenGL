@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{0f358774-cb28-4ba5-9ddc-1bcce5f72816}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Input">
+      <UniqueIdentifier>{4b02a3b5-8084-4ad8-b4ed-4b2fd8db090b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Input\Mouse">
+      <UniqueIdentifier>{ef60e501-c683-4116-b7c2-ce781578dff7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Input\Keyboard">
+      <UniqueIdentifier>{f88cbf48-209d-42d3-9939-2d21438579ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{7ba2dece-35e1-48a0-8c6f-2f7a38a19e0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math\Vectors">
+      <UniqueIdentifier>{803efd01-f513-4b70-a9ce-352d81a23bca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math\Quaternions">
+      <UniqueIdentifier>{d6f6d910-8f8b-4650-bbbf-9c7f56065dcc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math\Matrices">
+      <UniqueIdentifier>{de7183a8-aba0-4c45-ad41-7c54cbad84af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Defines">
+      <UniqueIdentifier>{060147b9-0bee-43f6-97c6-8776908bbf78}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\Core\INonCopy.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Core\Window.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Core\Input\Mouse.h">
+      <Filter>Core\Input\Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Core\Input\Keyboard.h">
+      <Filter>Core\Input\Keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Math\Vector3.h">
+      <Filter>Math\Vectors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Defines\Iostream.h">
+      <Filter>Core\Defines</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Defines\Strings.h">
+      <Filter>Core\Defines</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Defines\StringStream.h">
+      <Filter>Core\Defines</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Math\Common.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Core\Input\Mouse.cpp">
+      <Filter>Core\Input\Mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Core\Window.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Core\Input\Keyboard.cpp">
+      <Filter>Core\Input\Keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\src\Math\Vector3.cpp">
+      <Filter>Math\Vectors</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

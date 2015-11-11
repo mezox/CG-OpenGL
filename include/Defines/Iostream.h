@@ -1,7 +1,7 @@
-/*
+﻿/*
 *  Project:		Forest, rendering using OpenGL
 *	Location:	Lappeenranta University of Technology
-*	Author:		Tom� Kubov?�k, t.kubovcik@gmail.com
+*	Author:		Tomáš Kubovčík, t.kubovcik@gmail.com
 *	File desc:	definition of in and out unicode streams
 */
 
