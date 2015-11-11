@@ -370,7 +370,7 @@ namespace Forest
 		{
 			Matrix4 r = Matrix4::Identity();
 
-			float thetaY = 0.5f * (float)(M_PI * fov / 180.0f);
+			float thetaY = 0.5f * toRadians(fov);
 			float tanThetaY = std::tan(thetaY);
 			float tanThetaX = tanThetaY * aspect;
 			float halfW = tanThetaX * nearp;
@@ -385,7 +385,7 @@ namespace Forest
 
 			r(1, 1) = 2.0f * nearp * iWidth;	r(1, 2) = 0.0f;						r(1, 3) = (right + left) * iWidth;			r(1, 4) = 0.0f;
 			r(2, 1) = 0.0f;						r(2, 2) = 2.0f * nearp * iHeight;	r(2, 3) = (top + bottom) * iHeight;			r(2, 4) = 0.0f;
-			r(3, 1) = 0.0f;						r(3, 2) = 0.0f;						r(3, 3) = -(farp + nearp) * iDepth;			r(3, 4) = -2.0f * (farp * nearp) * iDepth;;
+			r(3, 1) = 0.0f;						r(3, 2) = 0.0f;						r(3, 3) = -(farp + nearp) * iDepth;			r(3, 4) = -2.0f * (farp * nearp) * iDepth;
 			r(4, 1) = 0.0f;						r(4, 2) = 0.0f;						r(4, 3) = -1.0f;							r(4, 4) = 0.0f;
 
 			return r;
