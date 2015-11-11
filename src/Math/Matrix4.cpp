@@ -1,4 +1,9 @@
-
+/*
+*   Project:	Forest, rendering using OpenGL
+*	Location:	Lappeenranta University of Technology
+*	Author:		Tomáš Kubov?ík, t.kubovcik@gmail.com
+*	File desc:	Matrix4 class definition
+*/
 
 #include "Matrix4.h"
 
