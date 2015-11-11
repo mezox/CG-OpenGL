@@ -7,6 +7,10 @@
 
 #include "Vector4.h"
 
+#ifndef FOREST_MATH_COMMON_H
+	#include "Common.h"
+#endif
+
 namespace Forest
 {
 	namespace Math
