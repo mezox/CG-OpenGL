@@ -154,12 +154,14 @@
     <ClInclude Include="..\include\Defines\StringStream.h" />
     <ClInclude Include="..\include\Math\Common.h" />
     <ClInclude Include="..\include\Math\Vector3.h" />
+    <ClInclude Include="..\include\Math\Vector4.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Core\Input\Keyboard.cpp" />
     <ClCompile Include="..\src\Core\Input\Mouse.cpp" />
     <ClCompile Include="..\src\Core\Window.cpp" />
     <ClCompile Include="..\src\Math\Vector3.cpp" />
+    <ClCompile Include="..\src\Math\Vector4.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
