@@ -32,6 +32,12 @@
     <Filter Include="Core\Defines">
       <UniqueIdentifier>{060147b9-0bee-43f6-97c6-8776908bbf78}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{b6a2908a-59e0-4718-8ed5-42caf3822d86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Shaders">
+      <UniqueIdentifier>{e9e0004f-9df8-4c25-b5bd-8bcbb3a900a1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Core\INonCopy.h">
@@ -67,6 +73,15 @@
     <ClInclude Include="..\include\Math\Matrix4.h">
       <Filter>Math\Matrices</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\Math\Quaternion.h">
+      <Filter>Math\Quaternions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Graphics\Shaders\Shader.h">
+      <Filter>Graphics\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Math\Maths.h">
+      <Filter>Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Core\Input\Mouse.cpp">
@@ -87,6 +102,12 @@
     </ClCompile>
     <ClCompile Include="..\src\Math\Matrix4.cpp">
       <Filter>Math\Matrices</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Math\Quaternion.cpp">
+      <Filter>Math\Quaternions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\Shaders\Shader.cpp">
+      <Filter>Graphics\Shaders</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
