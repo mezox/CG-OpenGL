@@ -15,8 +15,6 @@
 	#include "StringStream.h"
 #endif
 
-#include "Common.h"
-
 namespace Forest
 {
 	namespace Math
