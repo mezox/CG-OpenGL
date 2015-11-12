@@ -22,13 +22,28 @@
 	#include <string>
 #endif
 
+#ifdef FOREST_SYS_WINDOWS
+	#include <codecvt>
+#endif
+
+#ifdef UNICODE
+	#define _U(x) L##x
+	#define U(x) _U(x)
+#else
+	#define U(x) x
+#endif
+
 
 #if defined(UNICODE) || defined(_UNICODE)
 	using ustring = std::wstring;
 	#define to_ustring(v) std::to_wstring(v)
+	using uconverter = std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>>;
 #else
 	#define ustring std::string
 	#define to_ustring(v) std::to_string(v)
 #endif
+
+
+std::string UStringToStd(const ustring& str);
 
 #endif	//FOREST_DEFINES_STRINGS_H
