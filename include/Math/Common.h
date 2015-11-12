@@ -18,16 +18,16 @@ namespace Forest
 	namespace Math
 	{
 		const float epsilon = 0.00001f;		//epsilon for single precision
-		const float M_PI = 3.1415926f;
+		const float mpi = 3.1415926f;
 
 		static inline float toDegrees(float radians)
 		{
-			return radians * 180.0f / (float)M_PI;
+			return radians * 180.0f / (float)mpi;
 		}
 
 		static inline float toRadians(float degrees)
 		{
-			return (float)(M_PI * degrees / 180.0f);
+			return (float)(mpi * degrees / 180.0f);
 		}
 
 		static inline bool FloatEqual(float a, float b)
