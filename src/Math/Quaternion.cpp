@@ -40,7 +40,7 @@ namespace Forest
 
 		Quaternion::Quaternion(const Vector3 & vec)
 		{
-			float c = (float)(M_PI / 360),
+			float c = (float)(mpi / 360),
 				x = vec.x * c,
 				y = vec.y * c,
 				z = vec.z * c,
@@ -76,7 +76,6 @@ namespace Forest
 			p.w = 0;
 			p.v = V;
 
-			// But let's optimize it a bit instead.
 			Vector3 vcV = v.Cross(V);
 			return V + vcV*(2 * w) + v.Cross(vcV) * 2;
 		}
