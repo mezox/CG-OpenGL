@@ -20,7 +20,7 @@ namespace Forest
 
 		protected:
 			INonCopy() {}
-			~INonCopy() {}
+			virtual ~INonCopy() {}
 		};
 	}
 }
