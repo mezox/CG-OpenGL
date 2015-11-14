@@ -1,3 +1,11 @@
+﻿/*
+*   Project:	Forest, rendering using OpenGL
+*	Location:	Lappeenranta University of Technology
+*	Author:		Tomáš Kubovčík, t.kubovcik@gmail.com
+*	File desc:	Texture class declaration
+*/
+
+
 #ifndef FOREST_GRAPHICS_TEXTURE_H
 #define FOREST_GRAPHICS_TEXTURE_H
 
@@ -16,8 +24,8 @@ namespace Forest
 		class Texture
 		{
 		public:
-			Texture();
-			Texture(GLenum tTarget);
+			Texture() {}
+			~Texture() {}
 
 			bool Load(const ustring& file);
 			void Bind(GLenum tUnit);
@@ -26,7 +34,6 @@ namespace Forest
 		private:
 			GLuint	m_TextureID;
 			GLenum	m_TextureTarget;
-			GLenum	m_TextureType;
 		};
 	}
 }
