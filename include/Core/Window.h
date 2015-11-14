@@ -8,14 +8,7 @@
 #ifndef FOREST_CORE_WINDOW_H
 #define FOREST_CORE_WINDOW_H
 
-#ifndef FOREST_CORE_INPUT_MOUSE_H
-	#include "Input\Mouse.h"
-#endif
-
-#ifndef FOREST_CORE_INPUT_KEYBOARD_H
-	#include "Input\Keyboard.h"
-#endif
-
+#include "INonCopy.h"
 #include <SDL.h>
 
 namespace Forest
@@ -36,6 +29,9 @@ namespace Forest
 			bool	IsRunning();
 			void	Run();
 
+			static float Time();
+			static float DeltaTime() { return m_DeltaTime; }
+
 		private:
 			bool	Initialize();
 			void	SwapBuffers();
@@ -48,6 +44,7 @@ namespace Forest
 			bool	m_bRunning;
 			bool	m_bFullscreen;
 			bool	m_bCursorHidden;
+			static float	m_DeltaTime;
 		};
 	}
 }
