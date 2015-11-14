@@ -30,7 +30,7 @@ namespace Forest
 
 		public:
 			Shader(const ustring& vs, const ustring& fs);
-			~Shader();
+			virtual ~Shader();
 
 			void	Bind()	const;
 			void	Unbind() const;

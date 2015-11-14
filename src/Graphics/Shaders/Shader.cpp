@@ -8,9 +8,17 @@
 
 #include "Shader.h"
 
-#include <string>
-#include <fstream>
-#include "StringStream.h"
+#ifndef _FSTREAM_
+#	include <fstream>
+#endif
+
+#ifndef FOREST_DEFINES_STRINGS_H
+#	include "Strings.h"
+#endif
+
+#ifndef FOREST_DEFINES_STRINGSTREAM_H
+#	include "StringStream.h"
+#endif
 
 namespace Forest
 {
