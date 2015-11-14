@@ -1,7 +1,7 @@
-/*
+﻿/*
 *   Project:	Forest, rendering using OpenGL
 *	Location:	Lappeenranta University of Technology
-*	Author:		Tom� Kubov?�k, t.kubovcik@gmail.com
+*	Author:		Tomáš Kubovčík, t.kubovcik@gmail.com
 *	File desc:	Matrix4 class definition
 */
 
@@ -352,8 +352,8 @@ namespace Forest
 
 			r(1, 1) = 2.0f / rmh;	r(1, 2) = 0.0f;			r(1, 3) = 0.0f;			r(1, 4) = -a;
 			r(2, 1) = 0.0f;			r(2, 2) = 2.0f / tmb;	r(2, 3) = 0.0f;			r(2, 4) = -b;
-			r(3, 1) = 0.0f;			r(3, 2) = 0.0f;			r(3, 3) = -2.0f / fmn;	r(3, 4) = -b;
-			r(4, 1) = 0.0f;			r(4, 2) = 0.0f;			r(4, 3) = 0.0f;			r(4, 4) = -b;
+			r(3, 1) = 0.0f;			r(3, 2) = 0.0f;			r(3, 3) = -2.0f / fmn;	r(3, 4) = -c;
+			r(4, 1) = 0.0f;			r(4, 2) = 0.0f;			r(4, 3) = 0.0f;			r(4, 4) = 1.0f;
 
 			return r;
 		}
