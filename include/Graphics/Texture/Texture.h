@@ -25,7 +25,7 @@ namespace Forest
 		{
 		public:
 			Texture() {}
-			~Texture() {}
+			~Texture();
 
 			bool Load(const ustring& file);
 			void Bind(GLenum tUnit);
