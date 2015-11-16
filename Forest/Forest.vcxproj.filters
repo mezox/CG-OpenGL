@@ -29,14 +29,26 @@
     <Filter Include="Math\Matrices">
       <UniqueIdentifier>{de7183a8-aba0-4c45-ad41-7c54cbad84af}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Defines">
-      <UniqueIdentifier>{060147b9-0bee-43f6-97c6-8776908bbf78}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Graphics">
       <UniqueIdentifier>{b6a2908a-59e0-4718-8ed5-42caf3822d86}</UniqueIdentifier>
     </Filter>
     <Filter Include="Graphics\Shaders">
       <UniqueIdentifier>{e9e0004f-9df8-4c25-b5bd-8bcbb3a900a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Textures">
+      <UniqueIdentifier>{e871bde0-b6df-49c3-bff3-df5c2bfb24e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Defines">
+      <UniqueIdentifier>{060147b9-0bee-43f6-97c6-8776908bbf78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Objects">
+      <UniqueIdentifier>{cdfcf146-1a58-4dde-8af0-7e06a8e5fc71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Objects\Base">
+      <UniqueIdentifier>{52ff4f6d-c13f-4d33-83e4-aac62c351c0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Shaders\Base">
+      <UniqueIdentifier>{a11cc5ea-cafd-4c72-aa85-fed5844995bf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -56,13 +68,13 @@
       <Filter>Math\Vectors</Filter>
     </ClInclude>
     <ClInclude Include="..\include\Defines\Iostream.h">
-      <Filter>Core\Defines</Filter>
+      <Filter>Defines</Filter>
     </ClInclude>
     <ClInclude Include="..\include\Defines\Strings.h">
-      <Filter>Core\Defines</Filter>
+      <Filter>Defines</Filter>
     </ClInclude>
     <ClInclude Include="..\include\Defines\StringStream.h">
-      <Filter>Core\Defines</Filter>
+      <Filter>Defines</Filter>
     </ClInclude>
     <ClInclude Include="..\include\Math\Common.h">
       <Filter>Math</Filter>
@@ -76,11 +88,47 @@
     <ClInclude Include="..\include\Math\Quaternion.h">
       <Filter>Math\Quaternions</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\Graphics\Shaders\Shader.h">
-      <Filter>Graphics\Shaders</Filter>
-    </ClInclude>
     <ClInclude Include="..\include\Math\Maths.h">
       <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Graphics\Texture\Texture.h">
+      <Filter>Graphics\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Graphics\OBJModel.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Math\Vector2.h">
+      <Filter>Math\Vectors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Graphics\Shaders\StaticShader.h">
+      <Filter>Graphics\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Graphics\Entity.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Graphics\Renderer.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Graphics\Camera3D.h">
+      <Filter>Graphics\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Graphics\Object3D.h">
+      <Filter>Graphics\Objects\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Graphics\Light.h">
+      <Filter>Graphics\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Graphics\Terrain.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Graphics\TerrainRenderer.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Graphics\Shaders\Shader.h">
+      <Filter>Graphics\Shaders\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Graphics\Shaders\TerrainShader.h">
+      <Filter>Graphics\Shaders</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -106,8 +154,55 @@
     <ClCompile Include="..\src\Math\Quaternion.cpp">
       <Filter>Math\Quaternions</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Graphics\Shaders\Shader.cpp">
+    <ClCompile Include="..\src\Graphics\Texture\Texture.cpp">
+      <Filter>Graphics\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Defines\Strings.cpp">
+      <Filter>Defines</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\OBJModel.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\Shaders\StaticShader.cpp">
       <Filter>Graphics\Shaders</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Graphics\Math\Vector2.cpp">
+      <Filter>Math\Vectors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\Renderer.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\Camera3D.cpp">
+      <Filter>Graphics\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\Object3D.cpp">
+      <Filter>Graphics\Objects\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\Terrain.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\TerrainRenderer.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\Shaders\Shader.cpp">
+      <Filter>Graphics\Shaders\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\Shaders\TerrainShader.cpp">
+      <Filter>Graphics\Shaders</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="simple_fs.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="simple_vs.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="terrain_fs.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="terrain_vs.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

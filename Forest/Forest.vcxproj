@@ -69,27 +69,27 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\include;$(SolutionDir)\include\Core;$(SolutionDir)\include\SDL2;$(SolutionDir)\include\GL;$(SolutionDir)\include\Core\Input;$(SolutionDir)\include\Defines;$(SolutionDir)\include\Math;$(SolutionDir)\include\Graphics;$(SolutionDir)\include\Graphics\Shaders</IncludePath>
-    <SourcePath>$(VC_SourcePath);$(SolutionDir)\src</SourcePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\include;$(SolutionDir)\include\Core;$(SolutionDir)\include\SDL2;$(SolutionDir)\include\GL;$(SolutionDir)\include\Core\Input;$(SolutionDir)\include\Defines;$(SolutionDir)\include\Math;$(SolutionDir)\include\Graphics;$(SolutionDir)\include\Graphics\Shaders;$(SolutionDir)\include\Graphics\Texture</IncludePath>
+    <SourcePath>$(VC_SourcePath);$(SolutionDir)\src;$(SolutionDir)\src\Core;$(SolutionDir)\src\Core\Input;$(SolutionDir)\src\Defines;$(SolutionDir)\src\Graphics;$(SolutionDir)\src\Graphics\Shaders;$(SolutionDir)\src\Graphics\Texture;$(SolutionDir)\src\Math</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\include;$(SolutionDir)\include\Core;$(SolutionDir)\include\SDL2;$(SolutionDir)\include\GL;$(SolutionDir)\include\Core\Input;$(SolutionDir)\include\Defines;$(SolutionDir)\include\Math;$(SolutionDir)\include\Graphics;$(SolutionDir)\include\Graphics\Shaders</IncludePath>
-    <SourcePath>$(VC_SourcePath);$(SolutionDir)\src</SourcePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\include;$(SolutionDir)\include\Core;$(SolutionDir)\include\SDL2;$(SolutionDir)\include\GL;$(SolutionDir)\include\Core\Input;$(SolutionDir)\include\Defines;$(SolutionDir)\include\Math;$(SolutionDir)\include\Graphics;$(SolutionDir)\include\Graphics\Shaders;$(SolutionDir)\include\Graphics\Texture</IncludePath>
+    <SourcePath>$(VC_SourcePath);$(SolutionDir)\src;$(SolutionDir)\src\Core;$(SolutionDir)\src\Core\Input;$(SolutionDir)\src\Defines;$(SolutionDir)\src\Graphics;$(SolutionDir)\src\Graphics\Shaders;$(SolutionDir)\src\Graphics\Texture;$(SolutionDir)\src\Math</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\include;$(SolutionDir)\include\Core;$(SolutionDir)\include\SDL2;$(SolutionDir)\include\GL;$(SolutionDir)\include\Core\Input;$(SolutionDir)\include\Defines;$(SolutionDir)\include\Math;$(SolutionDir)\include\Graphics;$(SolutionDir)\include\Graphics\Shaders</IncludePath>
-    <SourcePath>$(VC_SourcePath);$(SolutionDir)\src</SourcePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\include;$(SolutionDir)\include\Core;$(SolutionDir)\include\SDL2;$(SolutionDir)\include\GL;$(SolutionDir)\include\Core\Input;$(SolutionDir)\include\Defines;$(SolutionDir)\include\Math;$(SolutionDir)\include\Graphics;$(SolutionDir)\include\Graphics\Shaders;$(SolutionDir)\include\Graphics\Texture</IncludePath>
+    <SourcePath>$(VC_SourcePath);$(SolutionDir)\src;$(SolutionDir)\src\Core;$(SolutionDir)\src\Core\Input;$(SolutionDir)\src\Defines;$(SolutionDir)\src\Graphics;$(SolutionDir)\src\Graphics\Shaders;$(SolutionDir)\src\Graphics\Texture;$(SolutionDir)\src\Math</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\include;$(SolutionDir)\include\Core;$(SolutionDir)\include\SDL2;$(SolutionDir)\include\GL;$(SolutionDir)\include\Core\Input;$(SolutionDir)\include\Defines;$(SolutionDir)\include\Math;$(SolutionDir)\include\Graphics;$(SolutionDir)\include\Graphics\Shaders</IncludePath>
-    <SourcePath>$(VC_SourcePath);$(SolutionDir)\src</SourcePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\include;$(SolutionDir)\include\Core;$(SolutionDir)\include\SDL2;$(SolutionDir)\include\GL;$(SolutionDir)\include\Core\Input;$(SolutionDir)\include\Defines;$(SolutionDir)\include\Math;$(SolutionDir)\include\Graphics;$(SolutionDir)\include\Graphics\Shaders;$(SolutionDir)\include\Graphics\Texture</IncludePath>
+    <SourcePath>$(VC_SourcePath);$(SolutionDir)\src;$(SolutionDir)\src\Core;$(SolutionDir)\src\Core\Input;$(SolutionDir)\src\Defines;$(SolutionDir)\src\Graphics;$(SolutionDir)\src\Graphics\Shaders;$(SolutionDir)\src\Graphics\Texture;$(SolutionDir)\src\Math</SourcePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_UNICODE;UNICODE;FOREST_SYS_WINDOWS;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;FOREST_SYS_WINDOWS;STB_IMAGE_IMPLEMENTATION;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -102,7 +102,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_UNICODE;UNICODE;FOREST_SYS_WINDOWS;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;FOREST_SYS_WINDOWS;STB_IMAGE_IMPLEMENTATION;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -117,7 +117,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_UNICODE;UNICODE;FOREST_SYS_WINDOWS;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;FOREST_SYS_WINDOWS;STB_IMAGE_IMPLEMENTATION;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -134,7 +134,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_UNICODE;UNICODE;FOREST_SYS_WINDOWS;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;FOREST_SYS_WINDOWS;STB_IMAGE_IMPLEMENTATION;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -152,11 +152,23 @@
     <ClInclude Include="..\include\Defines\Iostream.h" />
     <ClInclude Include="..\include\Defines\Strings.h" />
     <ClInclude Include="..\include\Defines\StringStream.h" />
+    <ClInclude Include="..\include\Graphics\Camera3D.h" />
+    <ClInclude Include="..\include\Graphics\Entity.h" />
+    <ClInclude Include="..\include\Graphics\Light.h" />
+    <ClInclude Include="..\include\Graphics\Object3D.h" />
+    <ClInclude Include="..\include\Graphics\OBJModel.h" />
+    <ClInclude Include="..\include\Graphics\Renderer.h" />
     <ClInclude Include="..\include\Graphics\Shaders\Shader.h" />
+    <ClInclude Include="..\include\Graphics\Shaders\StaticShader.h" />
+    <ClInclude Include="..\include\Graphics\Shaders\TerrainShader.h" />
+    <ClInclude Include="..\include\Graphics\Terrain.h" />
+    <ClInclude Include="..\include\Graphics\TerrainRenderer.h" />
+    <ClInclude Include="..\include\Graphics\Texture\Texture.h" />
     <ClInclude Include="..\include\Math\Common.h" />
     <ClInclude Include="..\include\Math\Maths.h" />
     <ClInclude Include="..\include\Math\Matrix4.h" />
     <ClInclude Include="..\include\Math\Quaternion.h" />
+    <ClInclude Include="..\include\Math\Vector2.h" />
     <ClInclude Include="..\include\Math\Vector3.h" />
     <ClInclude Include="..\include\Math\Vector4.h" />
   </ItemGroup>
@@ -164,12 +176,29 @@
     <ClCompile Include="..\src\Core\Input\Keyboard.cpp" />
     <ClCompile Include="..\src\Core\Input\Mouse.cpp" />
     <ClCompile Include="..\src\Core\Window.cpp" />
+    <ClCompile Include="..\src\Defines\Strings.cpp" />
+    <ClCompile Include="..\src\Graphics\Camera3D.cpp" />
+    <ClCompile Include="..\src\Graphics\Math\Vector2.cpp" />
+    <ClCompile Include="..\src\Graphics\Object3D.cpp" />
+    <ClCompile Include="..\src\Graphics\OBJModel.cpp" />
+    <ClCompile Include="..\src\Graphics\Renderer.cpp" />
     <ClCompile Include="..\src\Graphics\Shaders\Shader.cpp" />
+    <ClCompile Include="..\src\Graphics\Shaders\StaticShader.cpp" />
+    <ClCompile Include="..\src\Graphics\Shaders\TerrainShader.cpp" />
+    <ClCompile Include="..\src\Graphics\Terrain.cpp" />
+    <ClCompile Include="..\src\Graphics\TerrainRenderer.cpp" />
+    <ClCompile Include="..\src\Graphics\Texture\Texture.cpp" />
     <ClCompile Include="..\src\Math\Matrix4.cpp" />
     <ClCompile Include="..\src\Math\Quaternion.cpp" />
     <ClCompile Include="..\src\Math\Vector3.cpp" />
     <ClCompile Include="..\src\Math\Vector4.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="simple_fs.glsl" />
+    <None Include="simple_vs.glsl" />
+    <None Include="terrain_fs.glsl" />
+    <None Include="terrain_vs.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
