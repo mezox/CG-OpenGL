@@ -29,7 +29,6 @@ namespace Forest
 			static Matrix4 MakeTranslation(const Vector3& pos);
 			static Matrix4 MakeRotation(float angle, const Vector3& axis);
 			static Matrix4 MakeRotation(const Vector3& rot);
-			static Matrix4 MakeRotation(const Quaternion &q);
 			static Matrix4 MakeScale(const Vector3& scale);
 
 		public:
@@ -59,7 +58,7 @@ namespace Forest
 			Matrix4& Scale(const Vector3& v);
 
 			//Rotation
-			
+			Matrix4& Rotate(const Quaternion &q);
 			Matrix4& Rotate(float angle, const Vector3& axis);
 
 			friend inline uostream& operator<<(uostream& stream, const Matrix4& m);

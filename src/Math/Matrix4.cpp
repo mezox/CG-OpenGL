@@ -232,10 +232,8 @@ namespace Forest
 		/// </summary>
 		/// <param name="q">Quaternion rotation.</param>
 		/// <returns>Rotation matrix</returns>
-		Matrix4 Matrix4::MakeRotation(const Quaternion& q)
+		Matrix4& Matrix4::Rotate(const Quaternion& q)
 		{
-			Matrix4 m = Matrix4::Identity();
-
 			float x = q.v.x, y = q.v.y, z = q.v.z, w = q.w,
 
 			x2 = x + x,
@@ -252,19 +250,19 @@ namespace Forest
 			wy = w * y2,
 			wz = w * z2;
 
-			m.c1.x = 1.0f - (yy + zz);
-			m.c2.x = xy - wz;
-			m.c3.x = xz + wy;
+			c1.x = 1.0f - (yy + zz);
+			c2.x = xy - wz;
+			c3.x = xz + wy;
 			
-			m.c1.y = xy + wz;
-			m.c2.y = 1.0f - (xx + zz);
-			m.c3.y = yz - wx;
+			c1.y = xy + wz;
+			c2.y = 1.0f - (xx + zz);
+			c3.y = yz - wx;
 			
-			m.c1.z = xz - wy;
-			m.c2.z = yz + wx;
-			m.c3.z = 1 - (xx + yy);
+			c1.z = xz - wy;
+			c2.z = yz + wx;
+			c3.z = 1 - (xx + yy);
 
-			return m;
+			return *this;
 		}
 
 
