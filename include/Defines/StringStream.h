@@ -1,7 +1,7 @@
-/*
+﻿/*
 *	Project:	Forest, rendering using OpenGL
 *	Location:	Lappeenranta University of Technology
-*	Author:		Tom� Kubov?�k, t.kubovcik@gmail.com
+*	Author:		Tomáš Kubovčík, t.kubovcik@gmail.com
 *	File desc:	definition of unicode string stream types
 */
 
@@ -9,15 +9,15 @@
 #define FOREST_DEFINES_STRINGSTREAM_H
 
 #ifndef _SSTREAM_
-#include <sstream>
+#	include <sstream>
 #endif
 
 #ifndef FOREST_DEFINES_IOSTREAM_H
-#include "Iostream.h"
+#	include "Iostream.h"
 #endif
 
 #ifndef _OSTREAM_
-#include <ostream>
+#	include <ostream>
 #endif
 
 #if defined(UNICODE) || defined(_UNICODE)

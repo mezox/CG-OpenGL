@@ -10,16 +10,16 @@
 
 //C Runtime header files
 #ifndef _IOSTREAM_
-	#include <iostream>
+#	include <iostream>
 #endif
 
 
 #if defined(UNICODE) || defined(_UNICODE)
-	#define ucout std::wcout
-	#define ucin std::wcin
+#	define ucout std::wcout
+#	define ucin std::wcin
 #else
-	#define ucout std::cout
-	#define ucin std::cin
+#	define ucout std::cout
+#	define ucin std::cin
 #endif
 
 #endif //FOREST_DEFINES_IOSTREAM_H

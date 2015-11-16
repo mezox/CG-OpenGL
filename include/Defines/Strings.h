@@ -1,7 +1,7 @@
-/*
+﻿/*
 *  Project:		Forest, rendering using OpenGL
 *	Location:	Lappeenranta University of Technology
-*	Author:		Tom� Kubov?�k, t.kubovcik@gmail.com
+*	Author:		Tomáš Kubovčík, t.kubovcik@gmail.com
 *	File desc:	definition of unicode string types
 */
 
@@ -11,38 +11,37 @@
 
 //C Runtime header files
 #ifdef FOREST_SYS_WINDOWS
-	#ifndef _TCHAR_INC_
-	#include <tchar.h>
-	#endif
+#	ifndef _TCHAR_INC_
+#		include <tchar.h>
+#	endif
 #else
-	#include <string.h>
+#	include <string.h>
 #endif
 
 #ifndef _STRING_H
-	#include <string>
+#	include <string>
 #endif
 
 #ifdef FOREST_SYS_WINDOWS
-	#include <codecvt>
+#	include <codecvt>
 #endif
 
 #ifdef UNICODE
-	#define _U(x) L##x
-	#define U(x) _U(x)
+#	define _U(x) L##x
+#	define U(x) _U(x)
 #else
-	#define U(x) x
+#	define U(x) x
 #endif
 
 
 #if defined(UNICODE) || defined(_UNICODE)
 	using ustring = std::wstring;
-	#define to_ustring(v) std::to_wstring(v)
 	using uconverter = std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>>;
+#	define to_ustring(v) std::to_wstring(v)
 #else
-	#define ustring std::string
-	#define to_ustring(v) std::to_string(v)
+#	define ustring std::string
+#	define to_ustring(v) std::to_string(v)
 #endif
-
 
 std::string UStringToStd(const ustring& str);
 
