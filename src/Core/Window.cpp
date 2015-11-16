@@ -7,28 +7,19 @@
 
 #include "Window.h"
 
-#include <glew.h>
-#include <iostream>
-
-#include "OBJModel.h"
-
-#include <ostream>
-
-#include "Camera3D.h"
-#include "StaticShader.h"
+#include <GL/glew.h>
 
 #ifndef FOREST_CORE_INPUT_MOUSE_H
-#include "Mouse.h"
+#	include "Mouse.h"
 #endif
 
 #ifndef FOREST_CORE_INPUT_KEYBOARD_H
-#include "Keyboard.h"
+#	include "Keyboard.h"
 #endif
 
 #include <Windows.h>
-#include <random>
-#include "Entity.h"
 #include "Renderer.h"
+#include "TerrainRenderer.h"
 
 using namespace Forest::Graphics;
 
@@ -64,14 +55,10 @@ namespace Forest
 
 		void Window::Run()
 		{
-			OBJModel* tree = new OBJModel(U("hightree"), true, true);
-			//OBJModel* tree = new OBJModel(U("dragon"), false, false);
-			tree->LoadBinary();
-			
-			Camera3D	camera(1280,720, Vector3(0.0f,0.0f,0.0f));
-			Light		light(Vector3(0.0f,120.0f,10.0f),Vector3(1.0f), 0.05f);
-
-			StaticShader prg;
+			Camera3D	camera(1280,720, Vector3(0.0f,40.0f,0.0f));
+			Renderer	renderer(camera);
+			Terrain		terrain(-0.5f, -0.5f);
+			TerrainRenderer tRenderer = TerrainRenderer(camera, renderer.Lights());
 
 			float time = 0.0f;
 
@@ -81,31 +68,9 @@ namespace Forest
 			float currentTime = 0.0f;
 			float accumulator = 0.0f;
 
-
-			std::random_device rd;
-			std::mt19937 mt(rd());
-			std::uniform_real_distribution<float> dist(0.0, 150.0);
-			std::uniform_real_distribution<float> scaleFactor(0.5, 2.0);
-
-			std::vector<Entity> hightrees;
-
-			for (int i = 0; i < 50; i++)
-			{
-				float x = dist(mt);
-				float z = dist(mt) * -1;
-
-				float scale = scaleFactor(mt);
-
-				Entity e = Entity(tree, Vector3(x, 0.0f, z), Vector3(), Vector3(scale));
-
-				hightrees.push_back(e);
-			}
-
-			Renderer renderer;
-
 			m_bRunning = true;
 
-			//std::cout << glGetString(GL_VERSION) << std::endl;
+			std::cout << glGetString(GL_VERSION) << std::endl;
 
 			//Main Game loop
 			while (m_bRunning)
@@ -114,7 +79,7 @@ namespace Forest
 				m_DeltaTime = newTime - currentTime;
 				currentTime = newTime;
 
-				if (m_DeltaTime>0.25f)
+				if (m_DeltaTime > 0.25f)
 					m_DeltaTime = 0.25f;
 
 				accumulator += m_DeltaTime;
@@ -165,15 +130,14 @@ namespace Forest
 					case SDL_MOUSEMOTION:
 						Mouse::Instance().Move(event.motion.x, event.motion.y);
 
-						float mdx = static_cast<float>(Mouse::Instance().X() - Mouse::Instance().PrevX());
-						float mdy = static_cast<float>(Mouse::Instance().Y() - Mouse::Instance().PrevY());
-
 						if (Mouse::Instance().Pressed(Mouse::MOUSE_LEFT))
 						{
+							float mdx = static_cast<float>(Mouse::Instance().X() - Mouse::Instance().PrevX());
+							float mdy = static_cast<float>(Mouse::Instance().Y() - Mouse::Instance().PrevY());
+
 							camera.CalcPitch(mdy);
 							camera.CalcAngleAround(mdx);
 						}
-
 						break;
 					}
 				}
@@ -182,55 +146,9 @@ namespace Forest
 				Keyboard::Instance().Update();
 
 				camera.Update();
-		
-				/*prg.Bind();
-					glBindVertexArray(tree->VAO());
-					glEnableVertexAttribArray(0);
-					glEnableVertexAttribArray(1);
-					glEnableVertexAttribArray(2);
 
-					if (tree->HasTextures())
-					{
-						prg.BindTextures();
-						tree->Diffuse()->Bind(GL_TEXTURE0);
-					}
-					
-					if (tree->HasTransparency())
-					{
-						tree->Alpha()->Bind(GL_TEXTURE1);
-						glDisable(GL_CULL_FACE);
-					}
-					
-					prg.BindHasTextures(tree->HasTextures());
-					prg.BindProjectionMatrix(camera.Projection(Camera3D::PROJECTION_TYPES::PERSPECTIVE));
-					prg.BindModelMatrix(Matrix4::MakeTranslation(Vector3(0.0f,0.0f,-25.0f)));
-					prg.BindViewMatrix(camera.View());
-					prg.BindLight(light);	//It's enough to bind this once if we don't change the light properties
-
-					if (Mouse::Instance().Pressed(Mouse::MOUSE_MIDDLE))
-					{
-						glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-						glDrawElements(GL_TRIANGLES, (GLsizei)tree->Indices(), GL_UNSIGNED_INT, 0);
-						glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-					}
-					else
-					{
-						glDrawElements(GL_TRIANGLES, (GLsizei)tree->Indices(), GL_UNSIGNED_INT, 0);
-					}
-
-					glDisableVertexAttribArray(0);
-					glDisableVertexAttribArray(1);
-					glDisableVertexAttribArray(2);
-					glBindVertexArray(0);
-				prg.Unbind();
-
-				glEnable(GL_CULL_FACE);*/
-
-
-				for (auto& entity : hightrees)
-					renderer.ProcessEntity(entity);
-
-				renderer.Render(light, camera);
+				renderer.Render(camera);
+				tRenderer.Render(terrain, camera);
 
 				SwapBuffers();
 			}
@@ -288,11 +206,18 @@ namespace Forest
 		}
 
 
+		/// <summary>
+		/// Swap buffer function calling SDL2 built-in swap buff. function
+		/// </summary>
 		void Window::SwapBuffers()
 		{
 			SDL_GL_SwapWindow(m_Handle);
 		}
 
+
+		/// <summary>
+		/// Window clean-up method.
+		/// </summary>
 		void Window::Destroy()
 		{
 			m_bRunning = false;
@@ -301,6 +226,11 @@ namespace Forest
 			SDL_Quit();
 		}
 
+
+		/// <summary>
+		/// Times method measuring time between frames.
+		/// </summary>
+		/// <returns></returns>
 		float Window::Time()
 		{
 			static __int64 start = 0;
