@@ -23,7 +23,6 @@ namespace Forest
 			glDeleteTextures(1, &m_TextureID);
 		}
 
-
 		/// <summary>
 		/// Loads the texture from file using stb_image.c library.
 		/// </summary>
@@ -47,7 +46,7 @@ namespace Forest
 			glGenTextures(1, &m_TextureID);
 			glBindTexture(GL_TEXTURE_2D, m_TextureID);
 
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, x, y, 0, GL_BGRA, GL_UNSIGNED_BYTE, image_data);
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, x, y, 0, GL_RGBA, GL_UNSIGNED_BYTE, image_data);
 
 			//OpenGL 4.2+
 			//glTexStorage2D(GL_TEXTURE_2D, 4, GL_RGBA8, x, y);
